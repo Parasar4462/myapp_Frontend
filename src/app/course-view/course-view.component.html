@@ -1,0 +1,100 @@
+<!--<table border="2">-->
+
+<!--  <tr>-->
+<!--    <th>-->
+<!--      id-->
+<!--    </th>-->
+<!--    <th>-->
+<!--      Course Name-->
+<!--    </th>-->
+<!--    <th>-->
+<!--      Course Description-->
+<!--    </th>-->
+<!--    <th>-->
+<!--      Course Fees-->
+<!--    </th>-->
+<!--    <th>-->
+<!--      Discount-->
+<!--    </th>-->
+<!--    <th>-->
+<!--      Action-->
+<!--    </th>-->
+<!--  </tr>-->
+<!--  <tr *ngFor="let course of coursedata">-->
+<!--    <td>{{course.id}}</td>-->
+<!--    <td>{{course.name}}</td>-->
+<!--    <td>{{course.description}}</td>-->
+<!--    <td>{{course.fees}} </td>-->
+<!--    <td>{{course.discount }}</td>-->
+<!--    <td>-->
+<!--      <button (click)="edit(course)">-->
+<!--        Edit-->
+<!--      </button>-->
+<!--      <button (click)="delete(course)">-->
+<!--        Delete-->
+<!--      </button>-->
+
+<!--    </td>-->
+
+
+<!--  </tr>-->
+
+<!--</table>-->
+
+<div class="card">
+
+  <p-table [value]="coursedata" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="caption"><p-button><a routerLink="new">Add</a></p-button>
+      <h2>All courses</h2>
+
+
+    </ng-template>
+
+
+
+    <ng-template pTemplate="header">
+      <tr>
+      <th>
+        id
+      </th>
+      <th>
+        Course Name
+      </th>
+      <th>
+        Course Description
+      </th>
+      <th>
+        Course Fees
+      </th>
+      <th>
+        Discount
+      </th>
+      <th>
+        Action
+      </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-course>
+      <tr >
+        <td>{{course.id}}</td>
+        <td>{{course.name}}</td>
+        <td>{{course.description}}</td>
+        <td>{{course.fees}} </td>
+        <td>{{course.discount }}</td>
+        <td>
+
+
+          <p-button label="Edit" styleClass="p-button-outlined p-button-success" (click)="edit(course)">
+
+          </p-button>
+          &nbsp;
+          <p-button label="Delete" styleClass="p-button-outlined p-button-danger"(click)="delete(course)">
+
+          </p-button>
+
+
+        </td>
+    </ng-template>
+
+  </p-table>
+</div>
