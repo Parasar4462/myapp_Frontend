@@ -1,0 +1,349 @@
+<!-- create a student registation form in anguler -->
+<!-- create a student registation form in anguler -->
+
+<!-- Path: src\app\new-admission\new-admission.component.html -->
+
+<!-- form using primeng -->
+
+<form
+  class="myForm card flex-column md:flex-row gap-3"
+  [formGroup]="admissionInfo"
+  (ngSubmit)="addAdmission()"
+>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-id-card"></i>
+    </span>
+    <input
+      pInputText
+      placeholder="Admission Id"
+      formControlName="admissionNo"
+      size="20"
+    />
+  </div>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-user"></i>
+    </span>
+    <input
+      pInputText
+      placeholder="surname"
+      formControlName="surname"
+      size="20"
+    />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-user"> </i>
+    </span>
+
+    <input pInputText placeholder="name" formControlName="name" size="20" />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-star-fill"> </i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="fathername"
+      formControlName="fatherName"
+      size="20"
+    />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-star-fill"> </i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="mothername"
+      formControlName="motherName"
+      size="20"
+    />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-calendar"></i>
+    </span>
+    <input
+      type="date"
+      pInputText
+      placeholder="dob"
+      formControlName="dateOfBirth"
+      size="20"
+    />
+  </div>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-map-marker"></i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="pob"
+      formControlName="placeofBirth"
+      size="20"
+    />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-plus-circle"></i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="Physical Disability"
+      formControlName="pysicalProblemsOrDisability"
+      size="20"
+    />
+  </div>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-star-fill"></i>
+    </span>
+
+    <input pInputText placeholder="cast" formControlName="cast" size="20" />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-star-fill"></i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="Mother Tongue"
+      formControlName="motherTongue"
+      size="20"
+    />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-star-fill"></i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="Category"
+      formControlName="category"
+      size="20"
+    />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-globe"></i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="Religion"
+      formControlName="religion"
+      size="20"
+    />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+      <i class="pi pi-map-marker"></i>
+    </span>
+
+    <input
+      pInputText
+      placeholder="Address"
+      formControlName="address"
+      size="20"
+    />
+  </div>
+
+  <!-- copy of photo, adhar card -->
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-image"></i>
+        </span>
+    
+        <input
+        type="file"
+        pInputText
+        placeholder="Photo"
+        formControlName="photo"
+        size="20"
+        />
+
+    </div>
+
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-image"></i>
+        </span>
+    
+        <input
+        pInputText
+        type="file"
+        placeholder="Adhar Card"
+        formControlName="adharCard"
+        size="20"
+        />  
+    </div>
+     <!-- select course -->
+    <div class="p-inputgroup" >
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-bookmark"></i>
+        </span>
+
+       <select  pInputText name="course" id="course" formControlName="course"  >
+
+         <option *ngFor="let course of course"  >
+              {{course.name}}
+          </option>
+
+
+       </select>
+       <span class="p-inputgroup-addon" (click)="dropdownCourse()">
+        <i class="pi pi-angle-down"  >
+
+
+            
+        </i>
+        </span>
+
+        
+    </div>
+
+    <!-- admission date -->
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-calendar"></i>
+        </span>
+
+        <input
+        type="date"
+        pInputText
+        placeholder="Admission Date"
+        formControlName="admissionDate"
+
+        size="20"
+        />
+    </div>
+    <!-- contectNo -->
+    <div class="p-inputgroup">
+
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-phone"></i>
+        </span>
+
+        <input
+        pInputText
+        placeholder="Contect No"
+
+        formControlName="contectNo"
+
+        size="20"
+
+        />
+    </div>
+    <!-- email -->
+    <div class="p-inputgroup">
+
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-envelope"></i>
+        </span> 
+
+        <input
+        pInputText
+        placeholder="Email"
+        formControlName="email"
+
+        size="20"
+        />
+    </div>
+
+    <!-- batch -->
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-bookmark"></i>
+        </span>
+
+
+        <select pInputText name="batch" id="batch" formControlName="batch"  >
+          <option value="select batch">Select Batch</option>
+        <option>
+            morning
+
+        </option>
+        <option>
+            evening
+            
+        </option>
+        <option>
+            afternoon
+
+        </option>
+        <option>
+            night
+
+        </option>
+        <option>
+            day
+
+        </option>
+        <option>
+            weekend
+
+        </option>
+       
+
+        </select>
+
+        <span class="p-inputgroup-addon">
+        <i class="pi pi-angle-down"  >
+        </i>
+        </span>
+
+    </div>
+
+
+
+
+
+    
+
+        
+        <!-- submit -->
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+        <i class="pi pi-bookmark"></i>
+      </span>
+  
+      <input
+        pButton
+        type="submit"
+        label="Submit"
+        class="p-button-success"
+        size="20"
+
+        
+        
+      />
+    
+    </div>
+   
+
+
+
+
+</form>
+
+<h1>
+
+    {{msg}}
+</h1>

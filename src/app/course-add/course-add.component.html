@@ -1,0 +1,74 @@
+<h2>Add New Course</h2>
+
+<!--<form [formGroup]="courseinfo" (ngSubmit)="save()">-->
+<!--  <table>-->
+<!--    <tr>-->
+<!--      <th>-->
+<!--        ID:-->
+<!--      </th>-->
+<!--      <td>-->
+<!--        <input type="number" formControlName="id" >-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th> Name :</th>-->
+<!--      <td><input type="text" formControlName="name" size="20"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Description :</th>-->
+<!--      <td><textarea name="" id="" cols="30" rows="10" formControlName="description"></textarea></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Fees :</th>-->
+<!--      <td><input type="number" formControlName="fees"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <th>Discount :</th>-->
+<!--      <td><input type="number" formControlName="discount" value="0"></td>-->
+<!--    </tr>-->
+<!--    <tr>-->
+<!--      <td colspan="2" align="center">-->
+<!--        <input type="submit" value="save">-->
+<!--        <input type="reset" value="clear">-->
+<!--      </td>-->
+<!--    </tr>-->
+<!--  </table>-->
+
+<!--</form>-->
+<form class=" myForm card flex-column md:flex-row gap-3 "[formGroup]="courseinfo" (ngSubmit)="save()">
+
+  <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi"> Id</i>
+        </span>
+    <input pInputText placeholder="Course Id" formControlName="id" size="20" />
+  </div>
+    <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+            <i class="pi pi-book"></i>
+        </span>
+      <input pInputText placeholder="Course Name" formControlName="name" size="20" />
+    </div>
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">Fees</span>
+      <input type="number" formControlName="fees" pInputText placeholder="Fees" />
+    </div>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon"><i class="pi pi-info"></i></span>
+    <input type="text" pInputTextarea placeholder="Description" formControlName="description" />
+
+  </div>
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">Discount</span>
+    <input type="number" formControlName="discount"  pInputText placeholder="Discount" />
+  </div>
+
+  <div class="p-inputgroup">
+    <span class="p-inputgroup-addon">
+     <i class="pi pi-plus"></i>
+    </span>
+   <p-button type="submit">Add</p-button>
+  </div>
+
+
+</form>

@@ -1,0 +1,55 @@
+
+<div class="card">
+
+    <p-table [value]="admissiondata" styleClass="p-datatable-gridlines" [tableStyle]="{ 'min-width': '50rem' }">
+      <ng-template pTemplate="caption"><p-button routerLink="newAdmission">Add</p-button>
+        <h2>All Admissions</h2>
+  
+  
+      </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+            <th>Admission No</th>
+            <th>Student Name</th>
+            <th>Course</th>
+            <th>Address</th>
+            <th>Contect No</th>
+            <th>Email</th>
+            <th>Admission Date</th>
+            <th>Actions</th>
+            </tr>
+        </ng-template>
+
+        <ng-template pTemplate="body" let-admission>
+            <tr>
+                <td>{{admission.admissionNo}}</td>
+                <td>{{admission.surname}}&nbsp;{{admission.name}}&nbsp;{{admission.fatherName}}</td>
+                <td>{{admission.course}}</td>
+                <td>{{admission.address}}</td>
+                <td>{{admission.contectNo}}</td>
+                <td>{{admission.email}}</td>
+                
+                <td>{{admission.admissionDate}}</td>
+                <td>
+                  <p-button icon="pi pi-pencil" routerLink="editAdmission/{{admission.admissionNo}}"></p-button>
+                  <p-button icon="pi pi-trash" (click)="deleteadmission(admission)"></p-button>
+                  <p-button icon="pi pi-eye" routerLink="viewAdmission/{{admission.admissionno}}"></p-button>
+                </td>
+            </tr>
+        </ng-template>
+
+
+        <ng-template pTemplate="summary">
+            <div style="text-align:left">
+                In total there are {{admissiondata.length}} admissions.
+            </div>
+        </ng-template>
+
+
+  
+  
+  
+
+  
+    </p-table>
+  </div>
